@@ -14,13 +14,13 @@ export default defineMessages({
     id: 'simpleapps.components.Navigation.meetingcostcalculator',
     defaultMessage: 'Meeting cost calculator',
   },
-  userprofile: {
-    id: 'simpleapps.components.Navigation.userprofile',
-    defaultMessage: 'Simple user profile',
+  taskboard: {
+    id: 'simpleapps.components.Navigation.taskboard',
+    defaultMessage: 'Task board',
   },
   dashboard: {
     id: 'simpleapps.components.Navigation.dashboard',
-    defaultMessage: 'Simple dashboard with graphs',
+    defaultMessage: 'Dashboard with graphs',
   },
   jsone: {
     id: 'simpleapps.components.Navigation.jsone',

@@ -1,16 +1,16 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.4.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "react-simple-apps",
+  "version": "1.0.0",
+  "description": "A collection of simple and ready to use React applications.",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxstbr/react-boilerplate.git"
+    "url": "git://github.com/nadzweb/react-simple-apps.git"
   },
   "engines": {
     "npm": ">=3",
     "node": ">=5"
   },
-  "author": "Max Stoiber",
+  "author": "Nadzweb",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
@@ -229,6 +229,7 @@
     "react-router": "3.0.0",
     "react-router-redux": "4.0.6",
     "react-router-scroll": "0.4.1",
+    "react-select": "^0.9.1",
     "redux": "3.6.0",
     "redux-immutable": "3.0.8",
     "redux-saga": "0.14.0",

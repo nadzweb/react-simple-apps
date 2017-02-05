@@ -36,7 +36,7 @@ export class GithubPage extends React.Component {
       repos,
     };
     return (
-      <div>
+      <div className="col col-md-9">
         <Helmet
           title="Github Page"
           meta={[

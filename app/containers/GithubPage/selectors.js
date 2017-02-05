@@ -8,7 +8,7 @@ const selectGithub = (state) => state.get('github');
 
 const makeSelectUsername = () => createSelector(
   selectGithub,
-  (homeState) => homeState.get('username')
+  (pageState) => pageState.get('username')
 );
 
 export {
