@@ -23,44 +23,22 @@ import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 
-export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
 
     return (
-      <div className="col-12 col-md-9">
-        <article>
-          <Helmet
-            title="Home Page"
-            meta={[
-              { name: 'description', content: 'A React.js Boilerplate application homepage' },
-            ]}
-          />
-          <div>
-            
-            <Section>
-              <H2>
-                <FormattedMessage {...messages.trymeHeader} />
-              </H2>
-              <Form onSubmit={this.props.onSubmitForm}>
-                <label htmlFor="username">
-                  <FormattedMessage {...messages.trymeMessage} />
-                  <AtPrefix>
-                    <FormattedMessage {...messages.trymeAtPrefix} />
-                  </AtPrefix>
-                  <Input
-                    id="username"
-                    type="text"
-                    placeholder="mxstbr"
-                    value={this.props.username}
-                    onChange={this.props.onChangeUsername}
-                  />
-                </label>
-              </Form>
-              <ReposList {...reposListProps} />
-            </Section>
-          </div>
-        </article>
+      <div className="col col-md-9">
+        <Helmet
+          title="HomePage"
+          meta={[
+            { name: 'description', content: 'RSA - Homepage' },
+          ]}
+        />
+        
+        <H2>
+          <FormattedMessage {...messages.heading} />
+        </H2>
       </div>
     );
   }

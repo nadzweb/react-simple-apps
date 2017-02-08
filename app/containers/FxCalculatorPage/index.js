@@ -40,11 +40,10 @@ export class FxCalculatorPage extends React.Component {
   }
 
   render() {
-    var currenciesData = this.state.currenciesData;
+    let currenciesData = this.state.currenciesData;
     const currencyOptions = Object.keys(currenciesData).map(function(key) {
       return <option key={key} value={key.toString()}>{currenciesData[key]}</option>
     });
-     console.log(this.state, this.props);
     return (
       <div className="col col-md-9">
         <Helmet

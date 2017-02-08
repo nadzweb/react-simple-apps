@@ -28,6 +28,10 @@ export default defineMessages({
   },
   github: {
     id: 'simpleapps.components.Navigation.github',
-    defaultMessage: 'Github code repos',
+    defaultMessage: 'Search github repos',
+  },
+  download: {
+    id: 'simpleapps.components.Navigation.download',
+    defaultMessage: 'Download source code',
   }
 });

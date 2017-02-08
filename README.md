@@ -4,8 +4,8 @@
 # React Simple Apps 
 <div>
   <strong>React Simple Apps (RSA)</strong> is a collection of simple and ready to use apps built using the following technologies.<br/>
-  The project uses <a href="https://david-dm.org/mxstbr/react-boilerplate" target="_blank">REACT BOILERPLATE</a> for the base development.
-  <br/>
+  The project uses <a href="https://github.com/react-boilerplate/react-boilerplate" target="_blank">REACT BOILERPLATE</a> for the base development.
+  <br/><br/>
   <ul>
     <li>React</li>
     <li>Redux</li>
@@ -21,6 +21,9 @@
 <div align="center">
   <sub>Made with ❤︎ by Nadzweb.com</sub>
 </div>
+
+## Demo
+Demo is available at <a href="http://react-simple-apps.nadzweb.com/" target="_blank">React Simple Apps</a>
 
 ## Quick start
 
