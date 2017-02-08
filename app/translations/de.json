@@ -5,7 +5,8 @@
   "simpleapps.components.Navigation.dashboard": "DE - Dashboard",
   "simpleapps.components.Navigation.jsone": "DE - JSON Editor",
   "simpleapps.components.Navigation.github": "DE - Github code repos",
-  
+  "simpleapps.components.Navigation.download": "DE - Download source code",
+
   "simpleapps.containers.GithubPage.header": "DE - Github Repositories",
   "simpleapps.containers.GithubPage.tryme.atPrefix": "@",
   "simpleapps.containers.GithubPage.tryme.header": "DE - Try me!",

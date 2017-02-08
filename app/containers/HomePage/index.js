@@ -7,28 +7,22 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import styled from 'styled-components';
 
-import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
-import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
-import CenteredSection from './CenteredSection';
-import Form from './Form';
-import Input from './Input';
-import Section from './Section';
+import H1 from 'components/H1';
 import messages from './messages';
-import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
 
-export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export const Ul = styled.ul` font-style: italic`;
+
+export default class HomePage extends React.Component {
+  
+  shouldComponentUpdate() {
+    return false;
+  }
 
   render() {
-
     return (
-      <div className="col col-md-9">
+      <div className="col col-md-12">
         <Helmet
           title="HomePage"
           meta={[
@@ -36,9 +30,24 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
           ]}
         />
         
-        <H2>
-          <FormattedMessage {...messages.heading} />
-        </H2>
+        <div className="jumbotron">
+          <H1>Welcome to React Simple Apps</H1>
+          <p className="lead">
+            <strong>React Simple Apps (RSA)</strong> is a collection of simple and ready to use apps built using the following technologies.<br/>
+            The project uses <a href="https://github.com/react-boilerplate/react-boilerplate" target="_blank">REACT BOILERPLATE</a> for base development.
+              <br/><br/>
+            <Ul>
+              <li>React</li>
+              <li>Redux</li>
+              <li>ImmutableJS</li>
+              <li>reselect</li>
+              <li>react-intl</li>
+              <li>routing</li>
+              <li>...any many more</li>
+            </Ul>
+          </p>
+          <p><a className="button btn btn-lg btn-primary" href="/fxcalculator" role="button">View Apps</a></p>
+        </div>
       </div>
     );
   }

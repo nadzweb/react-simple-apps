@@ -31,7 +31,7 @@ export function App(props) {
       <Header />
       <AppWrapper className="container">
         <div className="row row-offcanvas row-offcanvas-right">
-          <Navigation />
+          {props.location.pathname=== '/' ? '' : <Navigation />}
           {React.Children.toArray(props.children)}
         </div>
         <hr/>
