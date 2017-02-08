@@ -3,17 +3,17 @@
 <br />
 # React Simple Apps 
 <div>
-  <strong>React Simple Apps (RSA)</strong> is a collection of simple apps built using the following technologies.<br/>
+  <strong>React Simple Apps (RSA)</strong> is a collection of simple and ready to use apps built using the following technologies.<br/>
   The project uses <a href="https://david-dm.org/mxstbr/react-boilerplate" target="_blank">REACT BOILERPLATE</a> for the base development.
   <br/>
-  - React 
-  - Redux
-  - ImmutableJS
-  - reselect
-  - redux-saga
-  - react-intl
-  - routing
-  
+  <ul>
+    <li>React</li>
+    <li>Redux</li>
+    <li>ImmutableJS</li>
+    <li>reselect</li>
+    <li>react-intl</li>
+    <li>routing</li>
+  </ul>
 </div>
 
 <br />
@@ -44,4 +44,6 @@ Now you're ready to rumble!
 
 ## License
 
-This project is licensed under the MIT license, Copyright (c) 2017 Nadzweb.com. For more information see `LICENSE.md`.
+This project is licensed under the MIT license, <br/>
+Copyright (c) 2017 Nadzweb.com.<br/>
+For more information see [LICENSE](LICENSE.md).
