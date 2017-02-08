@@ -9,6 +9,7 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
+import { Link } from 'react-router';
 import H1 from 'components/H1';
 import messages from './messages';
 
@@ -46,7 +47,7 @@ export default class HomePage extends React.Component {
               <li>...any many more</li>
             </Ul>
           </p>
-          <p><a className="button btn btn-lg btn-primary" href="/fxcalculator" role="button">View Apps</a></p>
+          <p><Link className="button btn btn-lg btn-primary" to="/fxcalculator" role="button">View Apps</Link></p>
         </div>
       </div>
     );

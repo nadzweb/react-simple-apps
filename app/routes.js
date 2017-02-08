@@ -56,6 +56,15 @@ export default function createRoutes(store) {
       }
     },
     {
+      path: '/meetingcalculator',
+      name: 'meetingCalculator',
+      getComponent(nextState, cb) {
+        import('containers/MeetingCalculatorPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },
+    {
       path: '/fxcalculator',
       name: 'fxCalculator',
        getComponent(nextState, cb) {

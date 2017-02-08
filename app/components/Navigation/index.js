@@ -28,11 +28,11 @@ class Navigation extends React.Component {
           <NavLink to="/github" className="list-group-item" activeClassName="active">
             <FormattedMessage {...messages.github} />
           </NavLink>
+          <NavLink to="/meetingcalculator" className="list-group-item" activeClassName="active">
+            <FormattedMessage {...messages.meetingcostcalculator} />
+          </NavLink>
           <NavLink to="/dashboard" className="list-group-item" activeClassName="active">
             <FormattedMessage {...messages.dashboard} />
-          </NavLink>
-          <NavLink to="/meetingcostcalculator" className="list-group-item" activeClassName="active">
-            <FormattedMessage {...messages.meetingcostcalculator} />
           </NavLink>
           <NavLink to="/taskboard" className="list-group-item" activeClassName="active">
             <FormattedMessage {...messages.taskboard} />
