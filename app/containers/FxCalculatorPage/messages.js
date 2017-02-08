@@ -13,5 +13,13 @@ export default defineMessages({
   blurb: {
     id: 'simpleapps.containers.FxCalculatorPage.blurb',
     defaultMessage: 'Enter the amount and select the currencies below',
-  }
+  },
+  from: {
+    id: 'simpleapps.containers.FxCalculatorPage.from',
+    defaultMessage: 'From:',
+  },
+  to: {
+    id: 'simpleapps.containers.FxCalculatorPage.to',
+    defaultMessage: 'To:',
+  },
 });

@@ -17,6 +17,11 @@
 
   "simpleapps.components.Header.home": "DE - Home",
 
+  "simpleapps.containers.FxCalculatorPage.header": "DE - Foreign Exchange Calculator",
+  "simpleapps.containers.FxCalculatorPage.blurb": "DE - Enter the amount and select the currencies below",
+  "simpleapps.containers.FxCalculatorPage.to": "DE - To:",
+  "simpleapps.containers.FxCalculatorPage.from": "DE - From:",
+
   "boilerplate.containers.FeaturePage.css.header": "",
   "boilerplate.containers.FeaturePage.css.message": "Die nächste Generation von CSS",
   "boilerplate.containers.FeaturePage.feedback.header": "Sofortiges Feedback",

@@ -12,6 +12,9 @@
 import { fromJS } from 'immutable';
 
 import {
+  CHANGE_AMOUNT,
+  CHANGE_CURRENCY_FROM,
+  CHANGE_CURRENCY_TO,
   LOAD_CURRENCY_DATA,
   LOAD_CURRENCY_DATA_SUCCESS,
   LOAD_CURRENCY_DATA_ERROR
@@ -20,22 +23,28 @@ import {
 // The initial state of the App
 const initialState = fromJS({
   amount: '100',
+  currencyFrom: 'USD',
+  currencyTo: 'USD',
   userData: {
     data: {},
-  },
+  }
 });
 
 function currencyAmountReducer(state = initialState, action) {
   switch (action.type) {
-    
+    case CHANGE_CURRENCY_TO:
+      return state.set('currencyTo', action.currency);
+    case CHANGE_CURRENCY_FROM:
+      return state.set('currencyFrom', action.currency);
+    case CHANGE_AMOUNT:
+      return state
+        .set('amount', action.amount);
     case LOAD_CURRENCY_DATA:
-      console.log('load',state,action);
       return state
         .set('loading', true)
         .set('error', false)
         .setIn(['userData', 'data'], {});
     case LOAD_CURRENCY_DATA_SUCCESS:
-    console.log('success',state,action);
       return state
         .setIn(['userData', 'data'], action.data)
         .set('loading', false)

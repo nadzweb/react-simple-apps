@@ -8,11 +8,28 @@ const calculatorState = (state) => state.get('fxcalculator');
 
 const makeSelectCurrency = () => createSelector(
   calculatorState,
-  (currencyState) => currencyState.getIn(['userData', 'data'])
-  //(globalState) => globalState.getIn(['userData', 'repositories'])
+  (calculatorState) => calculatorState.getIn(['userData', 'data']),
+);
+
+const makeSelectAmount = () => createSelector(
+  calculatorState,
+  (calculatorState) => calculatorState.get('amount')
+);
+
+const makeSelectFromCurrency = () => createSelector(
+  calculatorState,
+  (calculatorState) => calculatorState.get('currencyFrom')
+);
+
+const makeSelectToCurrency = () => createSelector(
+  calculatorState,
+  (calculatorState) => calculatorState.get('currencyTo')
 );
 
 export {
   calculatorState,
+  makeSelectAmount,
   makeSelectCurrency,
+  makeSelectFromCurrency,
+  makeSelectToCurrency
 };

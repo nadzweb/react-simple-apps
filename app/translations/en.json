@@ -10,6 +10,11 @@
   "simpleapps.components.Footer.license.message": "This project is licensed under the MIT license. SimpleReactApps!:)",
   "simpleapps.components.Footer.change.locale.message": "Change locale",
   
+  "simpleapps.containers.FxCalculatorPage.header": "Foreign Exchange Calculator",
+  "simpleapps.containers.FxCalculatorPage.blurb": "Enter the amount and select the currencies below",
+  "simpleapps.containers.FxCalculatorPage.to": "To:",
+  "simpleapps.containers.FxCalculatorPage.from": "From:",
+
   "boilerplate.containers.FeaturePage.css.header": "Features",
   "boilerplate.containers.FeaturePage.css.message": "Next generation CSS",
   "boilerplate.containers.FeaturePage.feedback.header": "Instant feedback",

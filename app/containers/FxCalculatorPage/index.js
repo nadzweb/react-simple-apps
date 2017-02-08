@@ -4,40 +4,47 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { createSelector, createStructuredSelector } from 'reselect';
 
+import request from 'utils/request';
+import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
+
 import Toggle from 'components/Toggle';
 import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
 import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
 import messages from './messages';
 import CurrencyInfo from './CurrencyInfo';
 
-import {Form, Input } from './Style';
+import {Form, Input, Select } from './Style';
 
-import { loadRepos } from '../App/actions';
-import { changeAmount, changeCurrencyAmount, loadCurrencyData } from './actions';
-import { makeSelectCurrency } from './selectors';
-export const appLocales = [
-  'Australi Dollars',
-  'NZ Dollars',
-];
+import { changeCurrencyFrom, changeCurrencyTo, changeCurrencyAmount, loadCurrencyData } from './actions';
+import { makeSelectFromCurrency, makeSelectToCurrency, makeSelectCurrency, makeSelectAmount } from './selectors';
 
-
-export class FxCalculatorPage extends React.PureComponent {
+export class FxCalculatorPage extends React.Component {
   
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currenciesData: {}
+    };
+  }
+
   componentDidMount() {
-    //return false;
+    const requestURL = 'https://openexchangerates.org/api/currencies.json?app_id=5c2dba0f887544a4b196eeaa8a3052f4';
+    var self = this;
+    fetch(requestURL)
+    .then((response) => response.json())
+    .then(function(data) {
+      self.setState({currenciesData: data});
+    })
+    .catch(e => e);
   }
 
   render() {
-    const mydata = '100';
-    const { loading, error, currencyInfoData } = this.props;
-    const currencyInfoProps = {
-      loading,
-      error,
-      currencyInfoData,
-    };
-    console.log(this.props.amount);
+    var currenciesData = this.state.currenciesData;
+    const currencyOptions = Object.keys(currenciesData).map(function(key) {
+      return <option key={key} value={key.toString()}>{currenciesData[key]}</option>
+    });
+     console.log(this.state, this.props);
     return (
       <div className="col col-md-9">
         <Helmet
@@ -56,6 +63,7 @@ export class FxCalculatorPage extends React.PureComponent {
             <div className="col-3">
               <Input
                 id="amount"
+                name="amount"
                 type="number"
                 placeholder="100"
                 value={this.props.amount}
@@ -64,14 +72,18 @@ export class FxCalculatorPage extends React.PureComponent {
             </div>
 
             <div className="col-3">
-              <div>From:
-                <Toggle value={this.props.currencies} values={appLocales} messages={messages} onToggle={this.props.onCurrencyToggle} />
+              <div><FormattedMessage {...messages.from} />
+                <Select name="fromCurrency" value={this.props.fromCurrency} required onChange={this.props.onCurrencyFromToggle}>
+                  {currencyOptions}
+                </Select>
               </div>
             </div>
 
             <div className="col-3"> 
-              <div>To:
-                <Toggle value={this.props.currencies} values={appLocales} messages={messages} onToggle={this.props.onCurrencyToggle} />
+              <div><FormattedMessage {...messages.to} />
+               <Select name="toCurrency" value={this.props.toCurrency} required onChange={this.props.onCurrencyToToggle}>
+                  {currencyOptions}
+                </Select>
               </div>
             </div>
 
@@ -83,14 +95,7 @@ export class FxCalculatorPage extends React.PureComponent {
           </div>
         
         </Form>
-        --start--
-        
-         
-         {([this.props.userData.rates]).map(function(name, index){
-              <span key={ index }>{name} - {index}</span>
-          })}
-        -- end--
-        <CurrencyInfo userData="{this.props.userData}" amount="100" ratedAmount="97" sourceCurrency="NZD" destCurrency="AUD" />
+        <CurrencyInfo info={this.props.userData} amount={this.props.amount} currencyTo={this.props.currencyTo} currencyFrom={this.props.currencyFrom} />
       </div>
     );
   }
@@ -98,31 +103,32 @@ export class FxCalculatorPage extends React.PureComponent {
 
 FxCalculatorPage.propTypes = {
   amount: React.PropTypes.string,
+  fromCurrency: React.PropTypes.string,
+  toCurrency: React.PropTypes.string,
   loading: React.PropTypes.bool,
   error: React.PropTypes.oneOfType([
     React.PropTypes.object,
     React.PropTypes.bool,
   ]),
-  currencyInfoData: React.PropTypes.oneOfType([
-    React.PropTypes.array,
-    React.PropTypes.bool,
-  ]),
-  onCurrencyToggle: React.PropTypes.func,
+  onCurrencyFromToggle: React.PropTypes.func,
+  onCurrencyToToggle: React.PropTypes.func,
   onChangeAmount: React.PropTypes.func,
   onSubmitForm: React.PropTypes.func,
   userData: React.PropTypes.object,
 };
 
-const mapStateToProps = createSelector(
-  makeSelectCurrency(),
-  (userData) => ({ userData }),
-  
-);
+const mapStateToProps = createStructuredSelector({
+  userData: makeSelectCurrency(),
+  amount: makeSelectAmount(),
+  currencyFrom: makeSelectFromCurrency(),
+  currencyTo: makeSelectToCurrency()
+});
 
 export function mapDispatchToProps(dispatch) {
   return {
     onChangeAmount: (evt) => dispatch(changeCurrencyAmount(evt.target.value)),
-    onCurrencyToggle: (evt) => dispatch(changeCurrency(evt.target.value)),
+    onCurrencyFromToggle: (evt) => dispatch(changeCurrencyFrom(evt.target.value)),
+    onCurrencyToToggle: (evt) => dispatch(changeCurrencyTo(evt.target.value)),
     onSubmitForm: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadCurrencyData());

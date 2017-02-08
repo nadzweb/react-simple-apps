@@ -18,3 +18,5 @@ export const LOAD_CURRENCY_DATA_ERROR = 'simpleReactApps/FxCalculatorPage/LOAD_C
 
 
 export const CHANGE_AMOUNT = 'simpleReactApps/FxCalculatorPage/CHANGE_AMOUNT';
+export const CHANGE_CURRENCY_FROM = 'simpleReactApps/FxCalculatorPage/CHANGE_CURRENCY_FROM';
+export const CHANGE_CURRENCY_TO = 'simpleReactApps/FxCalculatorPage/CHANGE_CURRENCY_TO';
