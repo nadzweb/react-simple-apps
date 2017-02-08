@@ -20,7 +20,7 @@ export const Download = styled.a`
 class Navigation extends React.Component {
   render() {
     return (
-      <div className="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+      <div className="col-6 col-sm-12 col-md-3 sidebar-offcanvas" id="sidebar">
         <div className="list-group">
            <NavLink to="/fxcalculator" className="list-group-item" activeClassName="active">
             <FormattedMessage {...messages.fxcalculator} />
@@ -40,7 +40,7 @@ class Navigation extends React.Component {
           <Download href="https://github.com/nadzweb/react-simple-apps" className="list-group-item" target="_blank">
             <FormattedMessage {...messages.download} />
           </Download>
-          
+          <br/>
         </div>
       </div>
     );

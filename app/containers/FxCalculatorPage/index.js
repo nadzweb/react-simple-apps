@@ -45,7 +45,7 @@ export class FxCalculatorPage extends React.Component {
       return <option key={key} value={key.toString()}>{currenciesData[key]}</option>
     });
     return (
-      <div className="col col-md-9">
+      <div className="col-12 col-sm-12 col-md-9">
         <Helmet
           title="Fx Calculator Page"
           meta={[
@@ -59,7 +59,7 @@ export class FxCalculatorPage extends React.Component {
         <FormattedMessage {...messages.blurb} />
         <Form name="fx-calculator-form" onSubmit={this.props.onSubmitForm}>
           <div className="row">
-            <div className="col-3">
+            <div className="col-12 col-sm-12 col-md-3">
               <Input
                 id="amount"
                 name="amount"
@@ -70,7 +70,7 @@ export class FxCalculatorPage extends React.Component {
               />
             </div>
 
-            <div className="col-3">
+            <div className="col-12 col-sm-12 col-md-3">
               <div><FormattedMessage {...messages.from} />
                 <Select name="fromCurrency" value={this.props.fromCurrency} required onChange={this.props.onCurrencyFromToggle}>
                   {currencyOptions}
@@ -78,7 +78,7 @@ export class FxCalculatorPage extends React.Component {
               </div>
             </div>
 
-            <div className="col-3"> 
+            <div className="col-12 col-sm-12 col-md-3"> 
               <div><FormattedMessage {...messages.to} />
                <Select name="toCurrency" value={this.props.toCurrency} required onChange={this.props.onCurrencyToToggle}>
                   {currencyOptions}

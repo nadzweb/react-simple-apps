@@ -54,7 +54,7 @@ export default class MeetingCalculatorPage extends React.Component {
     });
     average = (total/this.state.attendees.length);
     return (
-      <div className="col col-md-9">
+      <div className="col-12 col-sm-12 col-md-9">
         <Helmet
           title="Meeting Calculator Page"
           meta={[
@@ -69,16 +69,16 @@ export default class MeetingCalculatorPage extends React.Component {
         <Form onSubmit={this.handleSubmit}>
           { total != 0 && 
               <div className="row">
-                <div className="col col-3"><FormattedMessage {...messages.attendeeName} /></div>
-                <div className="col col-2"><FormattedMessage {...messages.attendeeHour} /></div>
-                <div className="col col-2"><FormattedMessage {...messages.attendeeCostHour} /></div>
-                <div className="col col-3">&nbsp;</div>
+                <div className="col col-3 col-md-4"><FormattedMessage {...messages.attendeeName} /></div>
+                <div className="col col-3 col-md-2"><FormattedMessage {...messages.attendeeHour} /></div>
+                <div className="col col-3 col-md-2"><FormattedMessage {...messages.attendeeCostHour} /></div>
+                <div className="col col-3 col-md-4">&nbsp;</div>
             </div>
           }
 
           {this.state.attendees.map((attendee, idx) => (
             <AttendeeRow key={idx} className="row attendee-row">
-              <div className="col-3">
+              <div className="col col-3 col-md-4">
                 <input
                   type="text"
                   name="name"
@@ -86,7 +86,7 @@ export default class MeetingCalculatorPage extends React.Component {
                   onChange={this.handleAttendeeNameChange(idx)}
                 />
               </div>
-              <div className="col-2">
+              <div className="col col-3 col-md-2">
                 <input
                   type="number"
                   name="hours"
@@ -94,7 +94,7 @@ export default class MeetingCalculatorPage extends React.Component {
                   onChange={this.handleAttendeeHoursChange(idx)}
                 />
               </div>
-              <div className="col-2">
+              <div className="col col-3 col-md-2">
               <input
                 type="number"
                 name="cost"
@@ -102,7 +102,7 @@ export default class MeetingCalculatorPage extends React.Component {
                 onChange={this.handleAttendeeCostChange(idx)}
               />
               </div>
-              <div className="col-3">
+              <div className="col col-3 col-md-4">
                 <button type="button" onClick={this.handleRemoveAttendee(idx)} className="btn btn-secondary"><FormattedMessage {...messages.remove} /></button>
               </div>
             </AttendeeRow>
@@ -115,7 +115,7 @@ export default class MeetingCalculatorPage extends React.Component {
           <br/>
           { total != 0 && !_.isNaN(total) &&
             <div className="row">
-              <div className="col-6">
+              <div className="col-12 col-md-6">
                 <div className="alert alert-success text-center" role="alert">
                   <div>
                     <FormattedMessage {...messages.totalCost} /><br />
@@ -126,7 +126,7 @@ export default class MeetingCalculatorPage extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-6">
+              <div className="col-12 col-md-6">
                  <div className="alert alert-info" role="alert">
                   <strong><FormattedMessage {...messages.summary} /></strong>
                   <ul>
