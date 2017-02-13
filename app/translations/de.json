@@ -34,6 +34,16 @@
   "simpleapps.containers.MeetingCalculatorPage.averageCost":"DE - Average cost",
   "simpleapps.containers.MeetingCalculatorPage.summary": "DE - Summary",
 
+
+  "simpleapps.containers.TaskBoardPage.header": "DE - Task board",
+  "simpleapps.containers.TaskBoardPage.blurb": "DE - A todo task board with drag drop functionality",
+  "simpleapps.containers.TaskBoardPage.todo": "DE - To do",
+  "simpleapps.containers.TaskBoardPage.doing": "DE - Doing",
+  "simpleapps.containers.TaskBoardPage.done": "DE - Done",
+  "simpleapps.containers.TaskBoardPage.addTask": "DE - Add task",
+  "simpleapps.containers.TaskBoardPage.title": "DE - Title",
+  "simpleapps.containers.TaskBoardPage.content": "DE - Content",
+  
   "boilerplate.containers.FeaturePage.css.header": "",
   "boilerplate.containers.FeaturePage.css.message": "Die nächste Generation von CSS",
   "boilerplate.containers.FeaturePage.feedback.header": "Sofortiges Feedback",

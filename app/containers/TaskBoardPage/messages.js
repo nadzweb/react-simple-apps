@@ -14,36 +14,28 @@ export default defineMessages({
     id: 'simpleapps.containers.TaskBoardPage.blurb',
     defaultMessage: 'A todo task board with drag drop functionality',
   },
-  attendeeName: {
-    id: 'simpleapps.containers.TaskBoardPage.attendeeName',
-    defaultMessage: 'Attendee name',
+  todo: {
+    id: 'simpleapps.containers.TaskBoardPage.todo',
+    defaultMessage: 'To do',
   },
-  attendeeHour: {
-    id: 'simpleapps.containers.TaskBoardPage.attendeeHour',
-    defaultMessage: 'Hour',
+  doing: {
+    id: 'simpleapps.containers.TaskBoardPage.doing',
+    defaultMessage: 'Doing',
   },
-  attendeeCostHour: {
-    id: 'simpleapps.containers.TaskBoardPage.attendeeCostHour',
-    defaultMessage: 'Cost / hour',
+  done: {
+    id: 'simpleapps.containers.TaskBoardPage.done',
+    defaultMessage: 'Done',
   },
-  remove: {
-    id: 'simpleapps.containers.TaskBoardPage.remove',
-    defaultMessage: 'Remove',
+  title: {
+    id: 'simpleapps.containers.TaskBoardPage.title',
+    defaultMessage: 'Title',
   },
-  addAttendee: {
-    id: 'simpleapps.containers.TaskBoardPage.addAttendee',
-    defaultMessage: 'Add Attendee',
+  content: {
+    id: 'simpleapps.containers.TaskBoardPage.content',
+    defaultMessage: 'Content',
   },
-  totalCost: {
-    id: 'simpleapps.containers.TaskBoardPage.totalCost',
-    defaultMessage: 'Total meeting cost',
+  addTask: {
+    id: 'simpleapps.containers.TaskBoardPage.addTask',
+    defaultMessage: 'Add Task',
   },
-  averageCost: {
-    id: 'simpleapps.containers.TaskBoardPage.averageCost',
-    defaultMessage: 'Average cost',
-  },
-  summary: {
-    id: 'simpleapps.containers.TaskBoardPage.summary',
-    defaultMessage: 'Summary',
-  }
 });
