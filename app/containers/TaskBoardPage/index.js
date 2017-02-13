@@ -50,7 +50,7 @@ export default class TaskBoardPage extends React.Component {
     const id = ((Math.random() * 9999) + 1).toFixed(0);
     const obj = { title: this.state.title, description: this.state.content, type:0, id:'task-ref'+id };
     this.setState((state) => ({ tasks: state.tasks.concat(obj) , title:'', description:'' }));
-    this.setTasks(this.state.tasks);
+    this.setTasks(this.state.tasks.concat(obj));
   }
 
   dropDone = (evt) => {
