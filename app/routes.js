@@ -64,6 +64,15 @@ export default function createRoutes(store) {
           .catch(errorLoading);
       },
     },
+     {
+      path: '/taskboard',
+      name: 'taskBoard',
+      getComponent(nextState, cb) {
+        import('containers/TaskBoardPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },
     {
       path: '/fxcalculator',
       name: 'fxCalculator',

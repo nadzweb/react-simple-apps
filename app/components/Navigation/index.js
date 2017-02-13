@@ -31,11 +31,11 @@ class Navigation extends React.Component {
           <NavLink to="/meetingcalculator" className="list-group-item" activeClassName="active">
             <FormattedMessage {...messages.meetingcostcalculator} />
           </NavLink>
-          <NavLink to="/dashboard" className="list-group-item" activeClassName="active">
-            <FormattedMessage {...messages.dashboard} />
-          </NavLink>
           <NavLink to="/taskboard" className="list-group-item" activeClassName="active">
             <FormattedMessage {...messages.taskboard} />
+          </NavLink>
+          <NavLink to="/dashboard" className="list-group-item" activeClassName="active">
+            <FormattedMessage {...messages.dashboard} />
           </NavLink>
           <Download href="https://github.com/nadzweb/react-simple-apps" className="list-group-item" target="_blank">
             <FormattedMessage {...messages.download} />

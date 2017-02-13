@@ -22,6 +22,17 @@
   "simpleapps.containers.FxCalculatorPage.blurb": "DE - Enter the amount and select the currencies below",
   "simpleapps.containers.FxCalculatorPage.to": "DE - To:",
   "simpleapps.containers.FxCalculatorPage.from": "DE - From:",
+  
+  "simpleapps.containers.MeetingCalculatorPage.header": "DE - Meeting Cost Calculator",
+  "simpleapps.containers.MeetingCalculatorPage.blurb": "DE - Enter the attendee name, hours and cost/per hour to calculate the meeting cost",
+  "simpleapps.containers.MeetingCalculatorPage.attendeeName": "DE - Attendee name",
+  "simpleapps.containers.MeetingCalculatorPage.attendeeHour": "DE - Hour",
+  "simpleapps.containers.MeetingCalculatorPage.attendeeCostHour": "DE - Cost / hour",
+  "simpleapps.containers.MeetingCalculatorPage.remove": "DE - Remove",
+  "simpleapps.containers.MeetingCalculatorPage.addAttendee": "DE - Add Attendee",
+  "simpleapps.containers.MeetingCalculatorPage.totalCost":"DE - Total meeting cost",
+  "simpleapps.containers.MeetingCalculatorPage.averageCost":"DE - Average cost",
+  "simpleapps.containers.MeetingCalculatorPage.summary": "DE - Summary",
 
   "boilerplate.containers.FeaturePage.css.header": "",
   "boilerplate.containers.FeaturePage.css.message": "Die nächste Generation von CSS",
