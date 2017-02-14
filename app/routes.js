@@ -74,6 +74,15 @@ export default function createRoutes(store) {
       },
     },
     {
+      path: '/dashboard',
+      name: 'dashboard',
+      getComponent(nextState, cb) {
+        import('containers/DashBoardPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },
+    {
       path: '/fxcalculator',
       name: 'fxCalculator',
        getComponent(nextState, cb) {
