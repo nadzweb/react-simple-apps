@@ -1,0 +1,18 @@
+{
+  "dashboard": {
+    "pie": {
+      "data":[["Facebook", 1],  ["Twitter", 2],  ["LinkedIn", 1],    ["Billboards", 3],     ["Conventional media", 4]],
+      "options": {"title":"Campaign Performances", "width":400, "height":300},
+      "columns": {"type":"string", "value": "Campaign Medium"}
+    },
+    "bar": {
+       "data":[["Facebook", 10000], ["Twitter", 7000],  ["LinkedIn", 6111],  ["Billboards", 1893],  ["Conventional media", 1445]],
+       "options":{"title":"Traffic sources", "width":400, "height":300},
+       "legends": {"xvalue":"Traffic sources", "yvalue":"Source value"}
+    },
+    "content": [
+      {"text":"Total sales", "value":12897},
+      {"text":"Total visitors", "value":27098},
+      {"text":"Margin", "value":"+27.12"}]
+  }
+}

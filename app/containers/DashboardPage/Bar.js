@@ -3,7 +3,7 @@ import {isUndefined} from 'lodash';
 import styled from 'styled-components';
 
 function Bar(props) {
-  if(props && !_.isUndefined(props.value)) {
+  if(props && !_.isUndefined(props.value) && !_.isEmpty(props.value)) {
     google.charts.setOnLoadCallback(function() {
       let data = new google.visualization.DataTable();
       data.addColumn('string', props.value.legends.xvalue);

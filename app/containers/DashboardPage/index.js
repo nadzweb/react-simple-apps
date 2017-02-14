@@ -1,14 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage, FormattedNumber } from 'react-intl';
-import {each, filter} from 'lodash';
+import {each, filter, isEmpty} from 'lodash';
 
 import H2 from 'components/H2';
 import messages from './messages';
 import Pie from './Pie';
 import Bar from './Bar';
 
-import {BoardWrapper, AddTaskForm, Div, Form} from './Style';
+import {InfoWrap} from './Style';
 
 export default class DashboardPage extends React.Component {
   
@@ -16,42 +16,28 @@ export default class DashboardPage extends React.Component {
     super();
     this.state = {
       pieData: {},
-      barDie: {}
+      barData: {},
+      contentData: []
     };
   }
 
   componentDidMount() {
-    // setup bar and pie chart data, make ajax requests here and fill data
-    this.setupPieData();
-    this.setupBarData();
+    // setup bar and pie chart data, make ajax requests
+    this.loadData();
   }
 
-  setupPieData = () => {
-    let data = [
-      ['Facebook', 1],
-      ['Twitter', 2],
-      ['LinkedIn', 1],
-      ['Billboards', 3],
-      ['Conventional media', 4]
-    ];
-    let options = {'title':'Campaign Performances', 'width':400, 'height':300};
-    let columns = {type:'string', value: 'Campaign Medium'}
-    let obj =  {data:data, options:options, columns:columns};
-    this.setState({pieData: obj});
-  }
-
-   setupBarData = () => {
-    let data = [
-      ['Facebook', 10000],
-      ['Twitter', 7000],
-      ['LinkedIn', 6111],
-      ['Billboards', 1893],
-      ['Conventional media', 1445]
-    ];
-    let options = {'title':'Traffic sources', 'width':400, 'height':300};
-    let legends = {xvalue:'Traffic sources', yvalue:'Source value'};
-    let obj =  {data:data, options:options, legends:legends};
-    this.setState({barData: obj});
+  loadData = () => {
+    const requestURL = 'api-data.json';
+    var self = this;
+    fetch(requestURL)
+    .then((response) => response.json())
+    .then(function(data) {
+      self.setState({
+          contentData: data.dashboard.content, 
+          pieData:data.dashboard.pie,
+          barData:data.dashboard.bar});
+    })
+    .catch(e => e);
   }
 
   render() {
@@ -70,12 +56,47 @@ export default class DashboardPage extends React.Component {
         <FormattedMessage {...messages.blurb} />
 
         <div className="row">
+            {this.state.contentData.map((data, idx) => (
+            <div key={idx} className="col-12 col-sm-4">
+              <InfoWrap>
+                <div>{data.text}</div>
+                { idx==0 &&
+                  <div>
+                  <i className="fa fa-money"></i>
+                  <div>
+                    <FormattedNumber value={data.value} style="currency" currency="USD"/>
+                  </div>
+                 </div>
+                }
+
+                { idx==1 &&
+                  <div>
+                  <i className="fa fa-group"></i>
+                  <div>
+                    <FormattedNumber value={data.value}/>
+                  </div>
+                 </div>
+                }
+                { idx==2 &&
+                  <div>
+                  <i className="fa fa-long-arrow-up"></i>
+                  <div>
+                    {data.value}
+                  </div>
+                 </div>
+                }
+              </InfoWrap>
+            </div>
+            ))}
+        </div>
+
+        <div className="row">
           <div className="col-12 col-md-6">
-            <div id="piechart"></div>
+            <div id="piechart"><div className="loader">Loading...</div></div>
             <Pie value={this.state.pieData} refId="piechart" />
           </div> 
           <div className="col-12 col-md-6">
-            <div id="barchart"></div>
+            <div id="barchart"><div className="loader">Loading...</div></div>
             <Bar value={this.state.barData} refId="barchart" />
           </div>
         </div>
